@@ -29,25 +29,20 @@ def embed(cover_image_path, secret_image_path, output_path):
 
 
 def decode(stego_image_path, output_path):
-    # Load the stego image
     stego_image = cv2.imread(stego_image_path)
 
-    # Extract the color channels of the stego image
     stego_channels = cv2.split(stego_image)
 
-    # Create empty arrays for the secret image channels
     secret_channels = []
 
-    # Extract the secret image channels using LSB steganography
+    # Reverse LSB steganography
     for stego_channel in stego_channels:
         lsb_stego = stego_channel & 0x01
         secret_channel = lsb_stego << 7
         secret_channels.append(secret_channel)
 
-    # Merge the secret image channels
     secret_image = cv2.merge(secret_channels)
 
-    # Save the secret image to the output file
     cv2.imwrite(output_path, secret_image)
 
 
