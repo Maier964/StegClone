@@ -41,12 +41,11 @@ This script will embed secret images into source images. It uses the LSB techniq
 ## Usage
 
 To run the script, use the following command:
-
-    ```bash
-    python3 StegClone.py <action> <image_path> <secret_path> 
+   
+   ```bash
+       python3 StegClone.py <action> <image_path> <secret_path> 
             [--key <encryption_key>] [--output <output_path>]
-    ```
-
+   ```
 
 
 ## Examples
