@@ -73,13 +73,13 @@ def main():
             print("[-] Secret Path Missing... Exiting")
             return
         if args.output == None:
-            embed( args.image_path, args.secret_path, 'stego_image.png' )
+            embed( args.image_path, args.secret_path, 'example_images/stego_image.png' )
         else:
             embed( args.image_path, args.secret_path, args.output )
 
     if args.action == 'decode':
         if args.output == None:
-            decode(args.image_path, 'decoded.png' )
+            decode(args.image_path, 'example_images/decoded.png' )
         else:
             decode(args.image_path, args.output )
 
