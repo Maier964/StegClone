@@ -5,17 +5,20 @@
 This script will embed secret images into source images. It uses the LSB technique presented in Steghide, a popular steganography tool that supports this operation. For more information regarding Steghide, please refer to this [link](https://github.com/StefanoDeVuono/steghide).
 
 ### Algorithm steps:
-1. Compress the secret image. This is to ensure as little size gap as possible between the input image and the secret image.
-   - Compression is done by using the zlib standard algorithm. This can be further optimized or implemented from scratch, depending on the project requirements. (TODO: Ask for clarification)
 
-2. Encrypt the secret image. This adds a layer of security to the embedding process.
+1. Encrypt the secret image. This adds a layer of security to the embedding process.
    - Right now, encryption is handled simply by using a XOR byte-wise function. (TODO: Add more complex security mechanisms, like RSA, public-private key)
 
-3. Embed the image using the LSB technique.
+2. Embed the image using the LSB technique.
 
-4. Save the new file.
+3. Save the new file.
 
 * For retrieval, the algorithm steps are reversed.
+
+* Further improvements include: 
+   * Compressing the secret image, so no size restrictions are present
+   * Implement additional security layers
+   * Maintain secret image dimensions ( at the moment, the decoded secret will have the same resolution as the cover image )
 
 
 ## Requirements
